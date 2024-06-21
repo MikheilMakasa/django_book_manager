@@ -23,7 +23,7 @@
       <td style="max-width: 400px">{{ record.description }}</td>
       <td>{{ record.score }}</td>
       <td>{{ record.publisher }}</td>
-      <td>{{ record.created_at }}</td>
+      <td>{{ record.created_at|date:'d-M-Y, H:i' }}</td>
     </tr>
     {% endfor %} {% endif %}
   </tbody>

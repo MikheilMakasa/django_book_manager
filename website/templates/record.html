@@ -21,7 +21,7 @@
     </p>
 
     <p class="card-text">
-      <strong>Create At: </strong>{{ book_record.created_at }}
+      <strong>Create At: </strong>{{ book_record.created_at|date:'d-M-Y, H:i' }}
     </p>
 
     <p class="card-text"><strong>ID: </strong>{{ book_record.id }}</p>
