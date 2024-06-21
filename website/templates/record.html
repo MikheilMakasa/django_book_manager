@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <strong> {{ book_record.book_name }}</strong>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Book Author: </strong>{{ book_record.book_author }}
+    </p>
+    <p class="card-text"><strong>Year: </strong>{{ book_record.year }}</p>
+
+    <p class="card-text">
+      <strong>Description: </strong>{{ book_record.description }}
+    </p>
+
+    <p class="card-text"><strong>Score: </strong>{{ book_record.score }}</p>
+
+    <p class="card-text">
+      <strong>Publisher: </strong>{{ book_record.publisher }}
+    </p>
+
+    <p class="card-text">
+      <strong>Create At: </strong>{{ book_record.created_at }}
+    </p>
+
+    <p class="card-text"><strong>ID: </strong>{{ book_record.id }}</p>
+  </div>
+</div>
+
+<br /><br />
+
+{% endblock %}

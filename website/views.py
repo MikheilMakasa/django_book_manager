@@ -48,3 +48,13 @@ def register_user(request):
 		return render(request, 'register.html', {'form':form})
 
 	return render(request, 'register.html', {'form':form})
+
+
+def book_record(request, pk):
+	if request.user.is_authenticated:
+		# Look Up Records
+		book_record = Record.objects.get(id=pk)
+		return render(request, 'record.html', {'book_record':book_record})
+	else:
+		messages.success(request, "You Must Be Logged In To View That Page...")
+		return redirect('home')

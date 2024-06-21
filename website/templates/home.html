@@ -5,7 +5,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col" class="w-30">Book Name</th>
-      <th scope="col">Book author</th>
+      <th scope="col">Book Author</th>
       <th scope="col">Year</th>
       <th scope="col">Description</th>
       <th scope="col">Score</th>
@@ -16,7 +16,7 @@
   <tbody>
     {% if records %} {% for record in records %}
     <tr>
-      <td>{{ record.id }}</td>
+      <td><a href="{% url 'record' record.id %}">{{ record.id }}</a></td>
       <td>{{ record.book_name }}</td>
       <td>{{ record.book_author }}</td>
       <td>{{ record.year }}</td>
