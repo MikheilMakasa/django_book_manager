@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Record
 
 
 class SignUpForm(UserCreationForm):
@@ -37,11 +38,14 @@ class SignUpForm(UserCreationForm):
 
 # Create Add Record Form
 class AddRecordForm(forms.ModelForm):
-	first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"First Name", "class":"form-control"}), label="")
-	last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Last Name", "class":"form-control"}), label="")
-	email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Email", "class":"form-control"}), label="")
-	phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Phone", "class":"form-control"}), label="")
-	address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Address", "class":"form-control"}), label="")
-	city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"City", "class":"form-control"}), label="")
-	state = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"State", "class":"form-control"}), label="")
-	zipcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Zipcode", "class":"form-control"}), label="")
+	book_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Book Name", "class":"form-control"}), label="")
+	book_author = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Book Author", "class":"form-control"}), label="")
+	year = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Year", "class":"form-control"}), label="")
+	description = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Description", "class":"form-control"}), label="")
+	score = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Score", "class":"form-control"}), label="")
+	publisher = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Publisher", "class":"form-control"}), label="")
+	
+	class Meta:
+		model = Record
+		exclude = ("user",)
+
